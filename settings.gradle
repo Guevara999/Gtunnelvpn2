@@ -1,2 +1,3 @@
-//include ':paygen-ssh-android'
-//include ':style', ':service', ':app'
+// include ':paygen-ssh-android'
+// include ':style', ':service'
+include ':app'
