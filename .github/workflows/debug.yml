@@ -16,7 +16,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    # Step 1: Use JDK 17 to run the Android SDK manager
+    # --- Force accept Android SDK licenses ---
+    - name: Accept Android SDK licenses
+      run: |
+        mkdir -p $ANDROID_HOME/licenses
+        echo "24333f8a63b6825ea9c5514f83c2829b004d1fee" > $ANDROID_HOME/licenses/android-sdk-license
+        echo "84831b9409646a918e30573bab4c9c91346d8abd" > $ANDROID_HOME/licenses/android-sdk-preview-license
+
     - name: Set up JDK 17 for SDK Manager
       uses: actions/setup-java@v4
       with:
@@ -25,8 +31,9 @@ jobs:
 
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
+      with:
+        accept-android-sdk-licenses: true
 
-    # Step 2: Switch to JDK 11 for the actual Gradle build
     - name: Set up JDK 11 for Gradle
       uses: actions/setup-java@v4
       with:
