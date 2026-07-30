@@ -16,7 +16,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    # --- Step 1: Use JDK 17 for Android SDK setup ---
+    # Step 1: Use JDK 17 to run the Android SDK manager
     - name: Set up JDK 17 for SDK Manager
       uses: actions/setup-java@v4
       with:
@@ -26,7 +26,7 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
 
-    # --- Step 2: Switch back to JDK 11 for the Gradle build ---
+    # Step 2: Switch to JDK 11 for the actual Gradle build
     - name: Set up JDK 11 for Gradle
       uses: actions/setup-java@v4
       with:
