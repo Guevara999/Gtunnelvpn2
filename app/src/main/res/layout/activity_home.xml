@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<LinearLayout
+		android:id="@+id/activity_mainLinearLayout"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical"
+		android:padding="10dp">
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="horizontal">
+
+				<Button
+					android:id="@+id/activity_starterButtonMain"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="20dp"
+					android:layout_marginRight="20dp"
+					android:background="@drawable/button_blue"
+					android:textColor="#FFFFFF"
+					android:textStyle="bold"
+					android:text="@string/start"
+					android:layout_gravity="center"/>
+
+			</LinearLayout>
+
+		<android.support.v7.widget.CardView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:cardCornerRadius="5.0dp">
+
+			<LinearLayout
+				android:orientation="vertical"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="10dp"
+				android:gravity="bottom|center">
+
+				<LinearLayout
+					android:orientation="vertical"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="10dp">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Select Server"
+						android:textColor="@color/colorText"/>
+
+					<Spinner
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:spinnerMode="dialog"
+						android:id="@+id/serverSpinner"/>
+
+				</LinearLayout>
+
+				<LinearLayout
+					android:orientation="vertical"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:paddingLeft="10dp"
+					android:paddingRight="10dp"
+					android:paddingBottom="10dp">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Select Payload"
+						android:textColor="@color/colorText"/>
+
+					<Spinner
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:spinnerMode="dialog"
+						android:id="@+id/payloadSpinner"/>
+
+				</LinearLayout>
+
+			</LinearLayout>
+
+		</android.support.v7.widget.CardView>
+		
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="5dp"
+			android:layout_marginTop="2dp"
+			android:gravity="left">
+
+			<CheckBox
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/useDns"
+				android:buttonTint="@color/white"
+				android:text="DNS (Google DNS)"/>
+
+			<CheckBox
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/startSSHCheckbox"
+				android:buttonTint="@color/white"
+				android:text="Start SSH"
+				android:layout_marginLeft="5dp"/>
+
+		</LinearLayout>
+
+		<com.google.android.gms.ads.AdView
+			xmlns:ads="http://schemas.android.com/apk/res-auto"
+			android:id="@+id/adBannerMainView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerHorizontal="true"
+			android:layout_alignParentBottom="true"
+			android:layout_marginTop="3dp"
+			android:visibility="gone"
+			ads:adSize="BANNER"
+			ads:adUnitId="ca-app-pub-6560862030501171/3101206569"
+			android:layout_gravity="center">
+
+		</com.google.android.gms.ads.AdView>
+
+	</LinearLayout>
+
+</LinearLayout>
+
